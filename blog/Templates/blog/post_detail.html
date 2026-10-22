@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} | My Django Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        article {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #00000010;
+        }
+
+        h1 {
+            color: #1769aa;
+        }
+
+        small {
+            color: #666;
+        }
+
+        a {
+            color: #1769aa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="{% url 'home' %}">← Back to Home</a></p>
+
+    <article>
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }}</p>
+        <small>Published on: {{ post.created_at }}</small>
+
+        <hr>
+
+        <p>{{ post.content }}</p>
+    </article>
+</body>
+</html>
